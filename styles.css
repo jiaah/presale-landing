@@ -2,6 +2,7 @@ body {
   min-height: 100vh;
   background: #f3f6fa;
   margin: 0;
+  font-size: 14px;
   font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', '돋움', 'Dotum', Arial,
     sans-serif;
 }
@@ -11,7 +12,7 @@ body {
 }
 @media (min-width: 768px) {
   .container {
-    max-width: 1200px;
+    max-width: 960px;
     margin: 0 auto;
   }
 }
@@ -57,13 +58,24 @@ body {
     font-size: 3rem;
   }
 }
+@media (min-width: 1024px) {
+  .preorder-title {
+    font-size: 4rem;
+  }
+}
 
 .preorder-desc {
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 @media (min-width: 768px) {
   .preorder-desc {
     font-size: 1.35rem;
+    margin-bottom: 3rem;
+  }
+}
+@media (min-width: 1024px) {
+  .preorder-desc {
+    font-size: 1.8rem;
   }
 }
 .preorder-btn {
@@ -71,16 +83,21 @@ body {
   color: #fff;
   border: none;
   border-radius: 8px;
-  padding: 1.5rem 2.5rem;
+  padding: 1rem 2rem;
   font-weight: 900;
   cursor: pointer;
   transition: all 0.3s;
-  margin-bottom: 0.5rem;
   box-shadow: none;
 }
 @media (min-width: 768px) {
   .preorder-btn {
     font-size: 1.2rem;
+    padding: 1.5rem 2.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .preorder-btn {
+    font-size: 1.5rem;
   }
 }
 .preorder-btn:hover {
@@ -89,8 +106,17 @@ body {
     0 1.5px 12px 0 rgba(255, 129, 73, 0.13);
 }
 .preorder-sample-info {
-  margin-top: 2rem;
   color: #666;
   font-weight: 600;
-  font-size: 1rem;
+}
+@media (min-width: 768px) {
+  .preorder-sample-info {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 1024px) {
+  .preorder-sample-info {
+    font-size: 1.5rem;
+  }
 }

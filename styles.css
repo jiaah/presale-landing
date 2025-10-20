@@ -1,17 +1,25 @@
 body {
   min-height: 100vh;
-  width: 100%;
   background: #f3f6fa;
   margin: 0;
   font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', '돋움', 'Dotum', Arial,
     sans-serif;
 }
-.landing-container {
+
+.container {
   width: 100%;
 }
+@media (min-width: 768px) {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
 .landing-section {
   width: 100%;
 }
+
 .landing-image {
   width: 100%;
   display: block;
@@ -37,29 +45,43 @@ body {
 .preorder-title {
   font-family: 'Cafe24 Supermagic', 'Nanum Pen Script', 'UhBee Se_hyun',
     'Gmarket Sans', 'Noto Sans KR', sans-serif;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 500;
   margin-top: 0;
   margin-bottom: 1.5rem;
   line-height: 1.2;
   letter-spacing: 0.03em;
 }
+@media (min-width: 768px) {
+  .preorder-title {
+    font-size: 3rem;
+  }
+}
+
 .preorder-desc {
-  font-size: 1.35rem;
   margin-bottom: 3rem;
+}
+@media (min-width: 768px) {
+  .preorder-desc {
+    font-size: 1.35rem;
+  }
 }
 .preorder-btn {
   background: #ff104c;
   color: #fff;
   border: none;
-  border-radius: 9999px;
-  padding: 2rem 2.5rem;
-  font-size: 1.2rem;
+  border-radius: 8px;
+  padding: 1.5rem 2.5rem;
   font-weight: 900;
   cursor: pointer;
   transition: all 0.3s;
   margin-bottom: 0.5rem;
   box-shadow: none;
+}
+@media (min-width: 768px) {
+  .preorder-btn {
+    font-size: 1.2rem;
+  }
 }
 .preorder-btn:hover {
   background: #c50432;

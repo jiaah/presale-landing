@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (sampleBtn) {
     sampleBtn.addEventListener('click', function () {
       const link = document.createElement('a');
-      link.href = '/sample-emoticons.zip';
+      link.href = 'public/sample-emoticons.zip';
       link.download = 'sample-emoticons.zip';
       document.body.appendChild(link);
       link.click();

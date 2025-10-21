@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   min-height: 100vh;
   background: #f3f6fa;
@@ -28,7 +34,7 @@ body {
 
 .preorder-section {
   width: 100%;
-  padding: 3rem 0 6rem 0;
+  padding: 3rem 1rem 6rem 1rem;
   text-align: center;
   color: #000000;
   background: #fff;
@@ -78,28 +84,60 @@ body {
     font-size: 1.8rem;
   }
 }
+
+.preorder-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0 1rem;
+  transition: all 0.3s;
+}
+
+#email-input {
+  padding: 1rem 2rem;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  width: 100%;
+}
+#email-input:focus {
+  outline: none;
+}
 .preorder-btn {
   background: #ff104c;
   color: #fff;
-  border: none;
+  border: 1px solid #ff104c;
   border-radius: 8px;
   padding: 1rem 2rem;
-  font-weight: 900;
   cursor: pointer;
-  transition: all 0.3s;
-  box-shadow: none;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .preorder-form {
+    font-size: 1.2rem;
+    flex-direction: row;
+  }
 }
 @media (min-width: 768px) {
+  #email-input,
   .preorder-btn {
-    font-size: 1.2rem;
     padding: 1.5rem 2.5rem;
+  }
+  #email-input {
+    flex: 2;
+  }
+  .preorder-btn {
+    flex: 1;
   }
 }
 @media (min-width: 1024px) {
+  #email-input,
   .preorder-btn {
     font-size: 1.5rem;
   }
 }
+
 .preorder-btn:hover {
   background: #c50432;
   box-shadow: 0 6px 30px 0 rgba(197, 4, 50, 0.18),

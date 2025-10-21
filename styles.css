@@ -33,12 +33,34 @@ body {
   display: block;
 }
 
+.video-section {
+  width: 100%;
+  background: #ffffff;
+  padding: 3rem 1rem;
+}
+
+.promo-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media (min-width: 768px) {
+  .video-section {
+		padding-top: 4rem
+  }
+}
+
 .preorder-section {
   width: 100%;
   padding: 3rem 1rem 6rem 1rem;
   text-align: center;
   color: #000000;
   background: #fff;
+}
+@media (min-width: 768px) {
+  .preorder-section {
+		padding-top: 5rem
+  }
 }
 
 .preorder-animate {
@@ -53,7 +75,7 @@ body {
 .preorder-title {
   font-family: 'Cafe24 Supermagic', 'Nanum Pen Script', 'UhBee Se_hyun',
     'Gmarket Sans', 'Noto Sans KR', sans-serif;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 500;
   margin-top: 0;
   margin-bottom: 1.5rem;
@@ -92,7 +114,6 @@ body {
 	align-items: center;
   gap: 0.5rem;
   width: 100%;
-  padding: 0 1rem;
   transition: all 0.3s;
 	font-size: 1rem;
 }
@@ -171,7 +192,6 @@ body {
   left: 30px;
   right: 30px;
 	margin: 0 1rem
-  background: #ffffff;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 1rem 1.5rem;

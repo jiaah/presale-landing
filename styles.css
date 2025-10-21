@@ -15,6 +15,7 @@ body {
 
 .container {
   width: 100%;
+	font-size: 1rem;
 }
 @media (min-width: 768px) {
   .container {
@@ -88,10 +89,12 @@ body {
 .preorder-form {
   display: flex;
   flex-direction: column;
+	align-items: center;
   gap: 0.5rem;
   width: 100%;
   padding: 0 1rem;
   transition: all 0.3s;
+	font-size: 1rem;
 }
 
 #email-input {
@@ -99,6 +102,7 @@ body {
   border: 1px solid #000000;
   border-radius: 8px;
   width: 100%;
+	font-size: 1rem;
 }
 #email-input:focus {
   outline: none;
@@ -111,6 +115,7 @@ body {
   padding: 1rem 2rem;
   cursor: pointer;
   width: 100%;
+	font-size: 1rem;
 }
 
 @media (min-width: 768px) {
@@ -156,4 +161,83 @@ body {
   .preorder-sample-info {
     font-size: 1.5rem;
   }
+}
+
+/*- NOTIFICATION -*/
+/* 기본 스타일 (모바일 우선) */
+.notification {
+  position: fixed;
+  bottom: 20px;
+  left: 30px;
+  right: 30px;
+	margin: 0 1rem
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.3s ease;
+  max-height: 50px
+}
+
+/* 웹에서 우측 하단으로 */
+@media (min-width: 768px) {
+  .notification {
+    bottom: 20px;
+    left: auto;
+    right: 20px;
+    width: 400px;
+    max-width: 400px;
+    transform: translateX(100%);
+		max-height: none;
+  }
+}
+
+.notification.show {
+  opacity: 1;
+}
+
+/* 모바일에서는 아래에서 위로 */
+.notification.show {
+  transform: translateY(0);
+}
+
+/* 웹에서는 우측에서 좌측으로 */
+@media (min-width: 768px) {
+  .notification.show {
+    transform: translateX(0);
+  }
+}
+
+.notification.success {
+  border-left: 4px solid #28a745;
+  background: #f8fff9;
+}
+
+.notification.error {
+  border-left: 4px solid #dc3545;
+  background: #fff5f5;
+}
+
+.notification-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+	line-height: 1rem;
+	font-size: 1rem;
+	height: 100%;
+}
+
+.notification-icon {
+  font-size: 1.2rem;
+}
+
+.notification.success .notification-icon {
+  color: #28a745;
+}
+
+.notification.error .notification-icon {
+  color: #dc3545;
 }

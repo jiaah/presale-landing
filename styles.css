@@ -6,7 +6,7 @@
 
 body {
   min-height: 100vh;
-  background: #f3f6fa;
+  background: #ffffff;
   margin: 0;
   font-size: 16px;
   font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', '돋움', 'Dotum', Arial,
@@ -171,6 +171,7 @@ body {
   left: 30px;
   right: 30px;
 	margin: 0 1rem
+  background: #ffffff;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 1rem 1.5rem;
@@ -212,12 +213,12 @@ body {
 }
 
 .notification.success {
-  border-left: 4px solid #28a745;
-  background: #f8fff9;
+  border-left: 4px solid #EDAE58;
+  background: #fafafa;
 }
 
 .notification.error {
-  border-left: 4px solid #dc3545;
+  border-left: 4px solid #ff104c;
   background: #fff5f5;
 }
 
@@ -235,9 +236,9 @@ body {
 }
 
 .notification.success .notification-icon {
-  color: #28a745;
+  color: #EDAE58;
 }
 
 .notification.error .notification-icon {
-  color: #dc3545;
+  color: #ff104c;
 }

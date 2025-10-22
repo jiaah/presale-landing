@@ -1,3 +1,53 @@
+/* ==========================================================================
+   CSS Variables
+   ========================================================================== */
+
+:root {
+  /* Colors */
+  --color-primary: #edae58;
+  --color-primary-hover: #dcb780;
+  --color-error: #ff104c;
+  --color-text: #000000;
+  --color-text-muted: #606060;
+  --color-background: #ffffff;
+  --color-border: #ddd;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-shadow-light: rgba(0, 0, 0, 0.15);
+
+  /* Typography */
+  --font-family-primary: 'Noto Sans KR', 'Apple SD Gothic Neo', '돋움', 'Dotum',
+    Arial, sans-serif;
+  --font-family-display: 'Cafe24 Supermagic', 'Nanum Pen Script',
+    'UhBee Se_hyun', 'Gmarket Sans', 'Noto Sans KR', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-xxl: 4rem;
+  --spacing-xxxl: 5rem;
+
+  /* Border radius */
+  --border-radius-sm: 8px;
+  --border-radius-lg: 1.5rem;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Z-index */
+  --z-overlay: 1;
+  --z-mask: 2;
+  --z-notification: 1000;
+}
+
+/* ==========================================================================
+   CSS Reset & Base Styles
+   ========================================================================== */
+
 *,
 *::before,
 *::after {
@@ -6,17 +56,21 @@
 
 body {
   min-height: 100vh;
-  background: #ffffff;
+  background: var(--color-background);
   margin: 0;
   font-size: 16px;
-  font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', '돋움', 'Dotum', Arial,
-    sans-serif;
+  font-family: var(--font-family-primary);
 }
+
+/* ==========================================================================
+   Layout Components
+   ========================================================================== */
 
 .container {
   width: 100%;
-	font-size: 1rem;
+  font-size: 1rem;
 }
+
 @media (min-width: 768px) {
   .container {
     max-width: 960px;
@@ -35,13 +89,14 @@ body {
 
 .video-box {
   width: 100%;
-  background: #ffffff;
-  padding: 2rem 2rem 1rem 2rem;
+  background: var(--color-background);
+  padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-sm)
+    var(--spacing-lg);
 }
 
 @media (min-width: 768px) {
   .video-box {
-		padding-top: 3rem;
+    padding-top: var(--spacing-xl);
   }
 }
 
@@ -51,69 +106,70 @@ body {
   display: block;
 }
 
+/* ==========================================================================
+   Animation Styles
+   ========================================================================== */
 
-/*--- Animation Styles ---------------------------------------------------*/
 .animate {
   opacity: 0;
   transform: scale(0.7) rotate(-3deg);
   transition: opacity 0.5s, transform 0.6s cubic-bezier(0.42, 1.58, 0.23, 0.92);
 }
+
 .animate.is-shown {
   opacity: 1;
   transform: scale(1) rotate(0deg);
 }
 
+/* ==========================================================================
+   Section Styles
+   ========================================================================== */
 
-/*--- Emoticon Section Styles ---------------------------------------------------*/
-.emoticon-container {
-  max-width: 75rem;
-  margin: 0 auto;
-}
-
-.emoticon-section,.preorder-box {
+.emoticon-section {
   width: 100%;
-  padding: 3rem 2rem 0 2rem;
+  max-width: 75rem;
+  margin: 0 auto var(--spacing-xl) auto;
+  padding: var(--spacing-xl) var(--spacing-lg) 0 var(--spacing-lg);
   text-align: center;
-  color: #000000
-	font-size: 1rem;
-	background: #ffffff;
+  color: var(--color-text);
+  font-size: 1rem;
+  background: var(--color-background);
 }
-.preorder-box {
-	padding-bottom: 5rem;
-}
+
 @media (min-width: 1024px) {
-	.emoticon-section,.preorder-box {
-		padding-left: 0;
-		padding-right: 0;
+  .emoticon-section {
+    padding-top: var(--spacing-xxxl);
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 6rem;
   }
-	.emoticon-section {
-		padding-top: 5rem;
-  }
-	.preorder-box {
-		padding-bottom: 6rem;
-	}
 }
+
+/* ==========================================================================
+   Emoticon Styles
+   ========================================================================== */
 
 .emoticon-header {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing-sm);
 }
 
 .emoticon-title {
-  font-family: 'Cafe24 Supermagic', 'Nanum Pen Script', 'UhBee Se_hyun',
-    'Gmarket Sans', 'Noto Sans KR', sans-serif;
+  font-family: var(--font-family-display);
   font-size: 2rem;
   font-weight: 500;
   margin-top: 0;
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--spacing-md);
   line-height: 1.2;
   letter-spacing: 0.03em;
 }
+
 @media (min-width: 768px) {
   .emoticon-title {
     font-size: 3rem;
   }
 }
+
 @media (min-width: 1024px) {
   .emoticon-title {
     font-size: 4rem;
@@ -123,7 +179,7 @@ body {
 .emoticon-grid {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: var(--spacing-lg);
   justify-content: center;
   align-items: center;
 }
@@ -131,7 +187,7 @@ body {
 @media (min-width: 768px) {
   .emoticon-grid {
     flex-direction: row;
-    gap: 2rem;
+    gap: var(--spacing-lg);
   }
 }
 
@@ -144,30 +200,30 @@ body {
   font-size: 2rem;
   font-weight: 500;
   text-align: center;
-	margin-top: 1rem;
-  margin-bottom: 1rem;
-	font-family: 'Cafe24 Supermagic', 'Nanum Pen Script', 'UhBee Se_hyun',
-	'Gmarket Sans', 'Noto Sans KR', sans-serif;
+  margin-top: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+  font-family: var(--font-family-display);
 }
 
 @media (min-width: 768px) {
   .emoticon-character {
     font-size: 3rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-md);
   }
 }
 
 .emoticon-box {
   background: white;
-  border-radius: 1.5rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  transition: all 0.3s ease;
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 10px 25px var(--color-shadow);
+  padding: var(--spacing-lg);
+  transition: all var(--transition-normal);
   position: relative;
 }
+
 @media (min-width: 768px) {
   .emoticon-box {
-    padding: 3rem 1.5rem;
+    padding: var(--spacing-xl) var(--spacing-md);
   }
 }
 
@@ -188,25 +244,25 @@ body {
   );
   pointer-events: none;
   z-index: 1;
-  border-radius: 1.5rem;
+  border-radius: var(--border-radius-lg);
 }
 
 .emoticon-flex {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 3rem;
+  gap: var(--spacing-sm);
   position: relative;
   overflow: hidden;
-  max-height: 20rem; /* 높이 제한으로 잘린 느낌 */
+  max-height: 15rem; /* 높이 제한으로 잘린 느낌 */
 }
+
 @media (min-width: 768px) {
   .emoticon-flex {
     max-height: 26rem;
-		gap: 1.5rem;
+    gap: var(--spacing-md);
   }
 }
-
 
 /* 잘린 느낌을 위한 그라데이션 마스크 */
 .emoticon-flex::after {
@@ -231,21 +287,21 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
 }
 
 .emoticon-item.blur {
   filter: blur(4px) brightness(0.7) contrast(0.8);
   opacity: 0.4;
   transform: scale(0.95);
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
 }
 
 .emoticon-img {
   width: 5rem;
   height: 5rem;
   object-fit: contain;
-  transition: transform 0.2s ease;
+  transition: transform var(--transition-fast);
 }
 
 @media (min-width: 768px) {
@@ -259,85 +315,123 @@ body {
   transform: scale(1.05);
 }
 
-/*--- Preorder Section Styles ---------------------------------------------------*/
-.preorder-desc {
-  margin-bottom: 2rem;
+/* ==========================================================================
+   Description & Text Styles
+   ========================================================================== */
+
+.emoticon-desc {
+  margin-bottom: var(--spacing-sm);
   font-size: 1.2rem;
   line-height: 1.5;
 }
-@media (min-width: 768px) {
-	.preorder-desc {
-		font-size: 1.5rem;
-		margin-bottom: 3rem;
-	}
-}
-.preorder-note {
-  color: #606060;
-}
-@media (min-width: 768px) {
-	.preorder-note {
-		font-size: 1.2rem;
-	}
+
+.preorder-desc {
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
+  font-size: 1.2rem;
+  line-height: 1.5;
 }
 
+@media (min-width: 768px) {
+  .emoticon-desc {
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.5rem;
+  }
+
+  .preorder-desc {
+    margin-top: var(--spacing-xxl);
+    margin-bottom: var(--spacing-xl);
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .emoticon-desc {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .preorder-desc {
+    margin-top: var(--spacing-xxxl);
+  }
+}
+
+.preorder-note {
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 768px) {
+  .preorder-note {
+    font-size: 1.2rem;
+  }
+}
+
+/* ==========================================================================
+   Form Styles
+   ========================================================================== */
 
 .preorder-form {
   display: flex;
   flex-direction: column;
-	align-items: center;
-  gap: 1rem;
+  align-items: center;
+  gap: var(--spacing-sm);
   width: 100%;
-  transition: all 0.3s;
-	font-size: 1rem;
-	max-width: 500px;
-	margin: 0 auto;
+  transition: all var(--transition-normal);
+  font-size: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
 }
+
 @media (min-width: 768px) {
   .preorder-form {
-		max-width: none;
+    max-width: none;
     font-size: 1.2rem;
     flex-direction: row;
   }
 }
 
 #email-input {
-  padding: 1rem 2rem;
-  border: 1px solid #000000;
-  border-radius: 8px;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border: 1px solid var(--color-text);
+  border-radius: var(--border-radius-sm);
   width: 100%;
-	font-size: 1rem;
+  font-size: 1rem;
 }
+
 #email-input:focus {
   outline: none;
 }
+
 .preorder-btn {
-  background: #EDAE58;
+  background: var(--color-primary);
   color: #fff;
-  border: 1px solid #EDAE58;
-  border-radius: 8px;
-  padding: 1rem 2rem;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--border-radius-sm);
+  padding: var(--spacing-sm) var(--spacing-lg);
   cursor: pointer;
   width: 100%;
-	font-size: 1rem;
-}
-.preorder-btn:hover {
-  background: #DCB780;
-	border: 1px solid #DCB780;
+  font-size: 1rem;
 }
 
+.preorder-btn:hover {
+  background: var(--color-primary-hover);
+  border: 1px solid var(--color-primary-hover);
+}
 
 @media (min-width: 768px) {
   #email-input,
   .preorder-btn {
-    padding: 1.5rem 2.5rem;
+    padding: var(--spacing-md) 2.5rem;
   }
+
   #email-input {
     flex: 2;
   }
+
   .preorder-btn {
     flex: 1;
   }
 }
+
 @media (min-width: 1024px) {
   #email-input,
   .preorder-btn {
@@ -345,25 +439,26 @@ body {
   }
 }
 
+/* ==========================================================================
+   Notification Styles
+   ========================================================================== */
 
-
-/*--- Notification Styles ---------------------------------------------------*/
 /* 기본 스타일 (모바일 우선) */
 .notification {
   position: fixed;
   bottom: 20px;
-  left: 30px;
-  right: 30px;
-	margin: 0 1rem
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1rem 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  z-index: 1000;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  width: calc(100% - 4rem);
+  max-width: 500px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  box-shadow: 0 4px 12px var(--color-shadow-light);
+  z-index: var(--z-notification);
   opacity: 0;
-  transform: translateY(100%);
-  transition: all 0.3s ease;
-  max-height: 50px
+  transition: all var(--transition-normal);
+  max-height: 50px;
 }
 
 /* 웹에서 우측 하단으로 */
@@ -375,7 +470,8 @@ body {
     width: 400px;
     max-width: 400px;
     transform: translateX(100%);
-		max-height: none;
+    max-height: none;
+    padding: var(--spacing-md);
   }
 }
 
@@ -385,7 +481,7 @@ body {
 
 /* 모바일에서는 아래에서 위로 */
 .notification.show {
-  transform: translateY(0);
+  transform: translateX(-50%) translateY(0);
 }
 
 /* 웹에서는 우측에서 좌측으로 */
@@ -396,22 +492,22 @@ body {
 }
 
 .notification.success {
-  border-left: 4px solid #EDAE58;
+  border-left: 4px solid var(--color-primary);
   background: #fafafa;
 }
 
 .notification.error {
-  border-left: 4px solid #ff104c;
+  border-left: 4px solid var(--color-error);
   background: #fff5f5;
 }
 
 .notification-content {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-	line-height: 1rem;
-	font-size: 1rem;
-	height: 100%;
+  gap: var(--spacing-xs);
+  line-height: 1rem;
+  font-size: 1rem;
+  height: 100%;
 }
 
 .notification-icon {
@@ -419,10 +515,9 @@ body {
 }
 
 .notification.success .notification-icon {
-  color: #EDAE58;
+  color: var(--color-primary);
 }
 
 .notification.error .notification-icon {
-  color: #ff104c;
+  color: var(--color-error);
 }
-

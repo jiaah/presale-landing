@@ -38,7 +38,7 @@ body {
 .video-section {
   width: 100%;
   background: #ffffff;
-  padding: 3rem 1rem;
+  padding: 1rem 1rem;
 }
 
 .promo-video {
@@ -48,7 +48,7 @@ body {
 }
 @media (min-width: 768px) {
   .video-section {
-		padding-top: 4rem
+		padding-top: 3rem
   }
 }
 

@@ -183,7 +183,41 @@ function setupEventListeners() {
   }
 }
 
+function setupVideoLoading() {
+  const video = document.querySelector('.promo-video');
+  if (!video) return;
+
+  // 동영상이 로드되면 skeleton 제거
+  video.addEventListener('loadeddata', () => {
+    video.classList.add('loaded');
+  });
+
+  // 동영상이 재생 가능할 때
+  video.addEventListener('canplay', () => {
+    video.classList.add('loaded');
+  });
+
+  // 동영상이 재생 시작될 때
+  video.addEventListener('playing', () => {
+    video.classList.add('loaded');
+  });
+
+  // 동영상 로딩 실패 시 skeleton 제거
+  video.addEventListener('error', () => {
+    console.warn('동영상 로딩 실패:', video.src);
+    video.classList.add('loaded');
+  });
+
+  // 동영상이 이미 로드된 상태인지 확인
+  if (video.readyState >= 2) {
+    video.classList.add('loaded');
+  }
+}
+
 document.addEventListener('DOMContentLoaded', async function () {
+  // 동영상 로딩 설정
+  setupVideoLoading();
+
   // 이모티콘 생성
   generateEmoticons();
 

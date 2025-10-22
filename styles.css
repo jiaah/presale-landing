@@ -92,6 +92,7 @@ body {
   background: var(--color-background);
   padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-sm)
     var(--spacing-lg);
+  position: relative;
 }
 
 @media (min-width: 768px) {
@@ -104,6 +105,95 @@ body {
   width: 100%;
   height: auto;
   display: block;
+  min-height: 200px;
+  background: #f5f5f5;
+  border-radius: var(--border-radius-sm);
+}
+
+/* 로딩 중일 때만 스켈레톤 효과 적용 */
+.promo-video:not(.loaded) {
+  position: relative;
+  background: linear-gradient(90deg, #f8f9fa 25%, #e9ecef 50%, #f8f9fa 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+  overflow: hidden;
+}
+
+/* 스켈레톤 로딩 애니메이션 */
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* 스켈레톤 콘텐츠 오버레이 */
+.promo-video:not(.loaded)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  animation: skeleton-shimmer 2s infinite;
+  z-index: 1;
+}
+
+/* 스켈레톤 shimmer 효과 */
+@keyframes skeleton-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* 스켈레톤 플레이 버튼 아이콘 */
+.promo-video:not(.loaded)::after {
+  content: '▶';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  animation: skeleton-pulse 2s infinite;
+}
+
+/* 스켈레톤 펄스 효과 */
+@keyframes skeleton-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+/* 동영상이 로드된 후 skeleton 효과 제거 */
+.promo-video.loaded {
+  background: none;
+  animation: none;
+  transition: all 0.3s ease;
+}
+
+.promo-video.loaded::before,
+.promo-video.loaded::after {
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 /* ==========================================================================

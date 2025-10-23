@@ -91,9 +91,9 @@ const memoticons = [
 ];
 
 // 에냥이용 sample 이미지들 
-const eSampleImages = Array.from({ length: 4 }, (_, i) => ({ file: `e-sample-${i + 1}` }));
+const eSampleImages = Array.from({ length: 5 }, (_, i) => ({ file: `e-sample-${i + 1}` }));
 // 테냥이용 sample 이미지들 
-const tSampleImages = Array.from({ length: 4 }, (_, i) => ({ file: `t-sample-${i + 1}` }));
+const tSampleImages = Array.from({ length: 5 }, (_, i) => ({ file: `t-sample-${i + 1}` }));
 
 function shuffleArray(array) {
   const shuffled = [...array];
@@ -108,8 +108,8 @@ function shuffleArray(array) {
 const createEmoticonArray = (baseEmoticons, sampleImages) => {
   const shuffledSamples = shuffleArray(sampleImages);
   
-  // sample 이미지가 4개이므로 반복해서 22개 만들기
-  const repeatedSamples = Array(6).fill(shuffledSamples).flat().slice(0, 22);
+  // sample 이미지가 5개이므로 반복해서 22개 만들기
+  const repeatedSamples = Array(5).fill(shuffledSamples).flat().slice(0, 22);
   
   return [
     ...baseEmoticons,

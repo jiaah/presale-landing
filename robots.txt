@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://jiaah.github.io/presale-landing/sitemap.xml

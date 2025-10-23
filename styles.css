@@ -80,6 +80,9 @@ body {
 
 .landing-box {
   width: 100%;
+  background: #fbb03b;
+  margin: 0;
+  padding: 0;
 }
 
 .landing-image {
@@ -89,19 +92,16 @@ body {
 
 .video-box {
   width: 100%;
-  background: var(--color-background);
-  padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-sm);
-    var(--spacing-lg);
+  padding: var(--spacing-lg) var(--spacing-lg) 0 var(--spacing-lg);
   position: relative;
   background: #fbb03b;
+  margin: 0;
 }
 
 @media (min-width: 768px) {
   .video-box {
-    padding-top: var(--spacing-xxl);
-		padding-left: var(--spacing-xxl);
-		padding-right: var(--spacing-xxl);
-	}
+    padding: var(--spacing-xxl) var(--spacing-xxl) 0 var(--spacing-xxl);
+  }
 }
 
 .promo-video {

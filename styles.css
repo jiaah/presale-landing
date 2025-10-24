@@ -71,6 +71,14 @@ body {
   font-size: 1rem;
 }
 
+.info-box {
+  width: 100%;
+  background-image: url('public/images/landing-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 @media (min-width: 768px) {
   .container {
     max-width: 960px;
@@ -80,7 +88,6 @@ body {
 
 .landing-box {
   width: 100%;
-  background: #fbb03b;
   margin: 0;
   padding: 0;
 }
@@ -93,8 +100,6 @@ body {
 .video-box {
   width: 100%;
   padding: var(--spacing-lg) var(--spacing-lg) 0 var(--spacing-lg);
-  position: relative;
-  background: #fbb03b;
   margin: 0;
 }
 
@@ -108,7 +113,6 @@ body {
   width: 100%;
   height: auto;
   display: block;
-  min-height: 200px;
 }
 
 /* 로딩 중일 때만 스켈레톤 효과 적용 */
@@ -195,6 +199,50 @@ body {
 .promo-video.loaded::after {
   opacity: 0;
   transition: opacity 0.3s ease;
+}
+
+/* ==========================================================================
+   Video CTA Button Styles
+   ========================================================================== */
+
+.video-cta {
+  text-align: center;
+  padding: var(--spacing-lg) 0 0;
+}
+
+.video-preorder-btn {
+  background: #fff;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--border-radius-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all var(--transition-normal);
+  width: 60%;
+  min-width: 260px;
+}
+
+.video-preorder-btn:hover {
+  color: var(--color-primary-hover);
+  transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+  .video-preorder-btn {
+    padding: var(--spacing-md) 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .video-cta {
+    padding-top: var(--spacing-xxl);
+  }
+  .video-preorder-btn {
+    width: 80%;
+    max-width: 600px;
+    font-size: 1.5rem;
+  }
 }
 
 /* ==========================================================================

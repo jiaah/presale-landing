@@ -166,12 +166,29 @@ function setupIntersectionObserver(selector, callback) {
   }
 }
 
+function scrollToPreorderSection() {
+  const preorderSection = document.querySelector('.preorder-box');
+  if (preorderSection) {
+    preorderSection.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+}
+
 function setupEventListeners() {
   const sampleBtn = document.getElementById('download-sample-btn');
   const emailInput = document.getElementById('email-input');
+  const videoBtn = document.getElementById('video-download-btn');
 
   if (sampleBtn) {
     sampleBtn.addEventListener('click', () => processReservation(emailInput));
+  }
+
+  if (videoBtn) {
+    videoBtn.addEventListener('click', () => {
+      scrollToPreorderSection();
+    });
   }
 
   if (emailInput) {
